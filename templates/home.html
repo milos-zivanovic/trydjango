@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello World!</h1>
+    <p>{{ text }} {{ number }}</p>
+    <ul>
+    {% for item in list %}
+        <li>{{ forloop.counter }}: {{ item }}</li>
+    {% endfor %}
+    </ul>
+    {% if request.user.is_authenticated %}
+        Authenticated user: {{ request.user }}
+    {% else %}
+        Please log in
+    {% endif %}
+{% endblock %}
